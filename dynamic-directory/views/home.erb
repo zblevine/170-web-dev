@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+  <title><%= @title %></title>
+</head>
+
+<body>
+  <ul>
+    <% @globbed.each do |file_name| %>
+      <li><a href=<%= file_name %>><%= file_name %></a></li>
+    <% end %>
+  </ul>
+
+  <% sort_str, href_str = (@reverse ? ["Sort Ascending", "/"] : ["Sort Descending", "?reverse=true"]) %>
+  <a href=<%= href_str %>><%= sort_str %></a>
+</body>
+</html>

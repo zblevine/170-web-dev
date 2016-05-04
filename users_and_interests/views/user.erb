@@ -1,0 +1,16 @@
+<h1>It's me, <%= @name.capitalize %>!</h1>
+<div>
+  <p>Email: <%= @email %></p>
+  <p>Interests: <%= @interests %></p>
+</div>
+
+<p>
+  Other users: 
+  <% count = 0 %>
+  <% @users.each do |usr| %>
+    <% if @name.to_s != usr.to_s %>
+      <% count += 1 %>
+      <a href="/users/<%= usr %>"><%= usr.capitalize %></a><%= ', ' if count < @users.size - 1 %> 
+    <% end %>
+  <% end %>
+</p>

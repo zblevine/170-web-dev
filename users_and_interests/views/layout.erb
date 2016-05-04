@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <title><%= @title %></title>
+</head>
+
+<body>
+  <%= yield %>
+
+  <p>There are <%= @users.size %> users with a total of <%= count_interests(@yaml_hash) %> interests.</p>
+</body>
+</html>
